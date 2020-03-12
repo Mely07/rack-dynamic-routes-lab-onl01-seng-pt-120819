@@ -10,6 +10,10 @@ class Application
       if @@items.include?(item)
       resp.write "x#{item}"
       
+      else
+        resp.write "Route not found"
+        resp.status = 404
+      
     else
       resp.write "Route not found"
       resp.status = 404
