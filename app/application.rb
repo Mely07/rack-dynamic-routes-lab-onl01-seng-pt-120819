@@ -9,15 +9,13 @@ class Application
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
       
+      item = @@items.find{|x| x.name == item_name}
+      if item 
+        resp.write item.price
+      else 
+        resp.write "Item not found"
+        resp.status = 400
       
-      @@items.each {|item|
-        if item.name == item_name
-          resp.write "#{item.price}"
-        else 
-          resp.write "Item not found"
-          resp.status = 400
-      }
-      # song = @@songs.find{|s| s.title == song_title}
       
       item = req.params["item"]
       if @@items.include?(item)
