@@ -11,7 +11,7 @@ class Application
       resp.write "x#{item}"
       
       else
-        resp.write "Route not found"
+        resp.write "Item not found"
         resp.status = 400
       
     else
