@@ -7,10 +7,12 @@ class Application
     req = Rack::Request.new(env)
   
     if req.path.match(/items/)
-      item = req.path.split("/items/").last
+      item_name = req.path.split("/items/").last
       
       
       @@items.each {|item|
+      if item.name == item_name
+        item.price
       
         
       }
