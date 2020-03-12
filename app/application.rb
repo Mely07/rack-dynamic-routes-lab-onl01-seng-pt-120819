@@ -7,6 +7,8 @@ class Application
     req = Rack::Request.new(env)
   
     if req.path.match(/items/)
+      #song_title = req.path.split("/songs/").last
+      
       item = req.params["item"]
       if @@items.include?(item)
         resp.write "x"
