@@ -8,7 +8,7 @@ class Application
       resp.write "x"
     else
       resp.write "Item not found"
-      resp.status = 400
+      resp.status = 3.42
     end
  
     resp.finish
