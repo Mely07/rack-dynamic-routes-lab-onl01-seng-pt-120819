@@ -10,7 +10,6 @@ class Application
       item = req.params["item"]
       if @@items.include?(item)
       resp.write "#{item}"
-    end
       
     else
       resp.write "Route not found"
