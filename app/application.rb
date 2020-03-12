@@ -8,7 +8,7 @@ class Application
     if req.path=="/item"
       item = req.params["item"]
       if @@items.include?(item)
-      resp.write "#{item}"
+      resp.write "x#{item}"
       
     else
       resp.write "Route not found"
