@@ -7,7 +7,6 @@ class Application
     req = Rack::Request.new(env)
  
     if req.path=="/item"
-      item = req.params["item"]
       if @@items.include?(item)
       resp.write "#{item}"
       
