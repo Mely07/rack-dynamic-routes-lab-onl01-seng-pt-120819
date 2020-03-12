@@ -10,9 +10,11 @@ class Application
       item = req.params["item"]
       if @@items.include?(item)
       resp.write "#{item}"
+      
     else
       resp.write "Route not found"
       resp.status = 404
+    end
     end
  
     resp.finish
