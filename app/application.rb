@@ -6,7 +6,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
   
-    if req.path.match(/items)
+    if req.path.match(/items/)
       item = req.params["item"]
       if @@items.include?(item)
         resp.write "x"
@@ -18,8 +18,7 @@ class Application
       resp.write "Route not found"
       resp.status = 404
     end
-  
-  
+
     resp.finish
   end
   
